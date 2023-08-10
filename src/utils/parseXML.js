@@ -4,17 +4,16 @@
  * @returns {Document} - The parsed XML as a DOM object.
  * @throws {Error} - Throws an error if parsing fails.
  */
-function parseXML(xmlString) {
+export function parseXML(xmlString) {
+  if (!xmlString) return new Document();
   const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+  const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
 
   // Check for XML parsing errors
-  const parseError = xmlDoc.getElementsByTagName("parsererror");
+  const parseError = xmlDoc.getElementsByTagName('parsererror');
   if (parseError.length) {
-    throw new Error("Error parsing XML", parseError);
+    throw new Error('Error parsing XML', parseError);
   }
 
   return xmlDoc;
 }
-
-export default parseXML;

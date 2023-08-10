@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/cn/xslt/dataone.types.v2.xsl"?>
+<ns3:nodeList xmlns:ns2="http://ns.dataone.org/service/types/v1"
+  xmlns:ns3="http://ns.dataone.org/service/types/v2.0">
+  <node replicate="false" synchronize="false" type="cn" state="up">
+    <identifier>urn:node:CN</identifier>
+    <name>cn</name>
+    <description>Round Robin Router for Production Coordinating Nodes</description>
+    <baseURL>https://cn.dataone.org/cn</baseURL>
+    <services>
+      <service name="CNCore" version="v1" available="true" />
+      <service name="CNRead" version="v1" available="true" />
+      <service name="CNAuthorization" version="v1" available="true" />
+      <service name="CNIdentity" version="v1" available="true">
+        <restriction methodName="mapIdentity">
+          <subject>CN=urn:node:KNB,DC=dataone,DC=org</subject>
+        </restriction>
+      </service>
+      <service name="CNReplication" version="v1" available="true" />
+      <service name="CNRegister" version="v1" available="true" />
+      <service name="CNCore" version="v2" available="true" />
+      <service name="CNRead" version="v2" available="true" />
+      <service name="CNAuthorization" version="v2" available="true" />
+      <service name="CNIdentity" version="v2" available="true" />
+      <service name="CNReplication" version="v2" available="true" />
+      <service name="CNRegister" version="v2" available="true" />
+      <service name="CNDiagnostic" version="v2" available="true" />
+      <service name="CNView" version="v2" available="true" />
+    </services>
+    <subject>CN=urn:node:CN,DC=dataone,DC=org</subject>
+    <contactSubject>CN=Robert P Waltz A904,O=Google,C=US,DC=cilogon,DC=org</contactSubject>
+    <property key="CN_operational_status">operational</property>
+    <property key="CN_node_name">CN</property>
+  </node>
+  <node replicate="true" synchronize="true" type="mn" state="up">
+    <identifier>urn:node:KNB</identifier>
+    <name>KNB Data Repository</name>
+    <description>The Knowledge Network for Biocomplexity (KNB) is a national network intended to
+      facilitate ecological and environmental research on biocomplexity.</description>
+    <baseURL>https://knb.ecoinformatics.org/knb/d1/mn</baseURL>
+    <services>
+      <service name="MNCore" version="v1" available="true" />
+      <service name="MNCore" version="v2" available="true" />
+      <service name="MNRead" version="v1" available="true" />
+      <service name="MNRead" version="v2" available="true" />
+      <service name="MNAuthorization" version="v1" available="true" />
+      <service name="MNAuthorization" version="v2" available="true" />
+      <service name="MNStorage" version="v1" available="true" />
+      <service name="MNStorage" version="v2" available="true" />
+      <service name="MNReplication" version="v1" available="true" />
+      <service name="MNReplication" version="v2" available="true" />
+      <service name="MNPackage" version="v1" available="true" />
+      <service name="MNPackage" version="v2" available="true" />
+      <service name="MNView" version="v2" available="true" />
+    </services>
+    <synchronization>
+      <schedule hour="*" mday="*" min="0/3" mon="*" sec="10" wday="?" year="*" />
+      <lastHarvested>2023-08-09T22:28:44.937+00:00</lastHarvested>
+      <lastCompleteHarvest>1900-01-01T00:00:00.000+00:00</lastCompleteHarvest>
+    </synchronization>
+    <subject>CN=urn:node:KNB,DC=dataone,DC=org</subject>
+    <contactSubject>CN=Christopher Jones A2108,O=Google,C=US,DC=cilogon,DC=org</contactSubject>
+    <property key="CN_operational_status">operational</property>
+    <property key="CN_date_operational">2012-07-23T00:00:0.000Z</property>
+    <property key="CN_node_name">Knowledge Network for Biocomplexity</property>
+    <property key="CN_logo_url">
+      https://raw.githubusercontent.com/DataONEorg/member-node-info/master/production/graphics/web/KNB.png</property>
+    <property key="CN_info_url">https://knb.ecoinformatics.org/</property>
+    <property key="CN_location_lonlat">-119.697933,34.420222</property>
+    <property key="upgrade_status">success</property>
+    <property key="metacat_version">2.19.0</property>
+    <property key="read_only_mode">false</property>
+    <property key="CN_date_upcoming">2012-07-23T00:00:0.000Z</property>
+  </node>
+  <node replicate="false" synchronize="true" type="mn" state="up">
+    <identifier>urn:node:ESA</identifier>
+    <name>ESA Data Registry</name>
+    <description>The data sets registered here are associated with articles published in the
+      journals of the Ecological Society of America.</description>
+    <baseURL>https://data.esa.org/esa/d1/mn</baseURL>
+    <services>
+      <service name="MNCore" version="v1" available="true" />
+      <service name="MNCore" version="v2" available="true" />
+      <service name="MNRead" version="v1" available="true" />
+      <service name="MNRead" version="v2" available="true" />
+      <service name="MNAuthorization" version="v1" available="true" />
+      <service name="MNAuthorization" version="v2" available="true" />
+      <service name="MNStorage" version="v1" available="true">
+        <restriction methodName="create">
+          <subject>UID=tao,O=NCEAS,DC=ecoinformatics,DC=org</subject>
+        </restriction>
+        <restriction methodName="update">
+          <subject>UID=tao,O=NCEAS,DC=ecoinformatics,DC=org</subject>
+        </restriction>
+      </service>
+      <service name="MNStorage" version="v2" available="true">
+        <restriction methodName="create">
+          <subject>UID=tao,O=NCEAS,DC=ecoinformatics,DC=org</subject>
+        </restriction>
+        <restriction methodName="update">
+          <subject>UID=tao,O=NCEAS,DC=ecoinformatics,DC=org</subject>
+        </restriction>
+      </service>
+      <service name="MNReplication" version="v1" available="true" />
+      <service name="MNReplication" version="v2" available="true" />
+      <service name="MNPackage" version="v1" available="true" />
+      <service name="MNPackage" version="v2" available="true" />
+      <service name="MNView" version="v2" available="true" />
+    </services>
+    <synchronization>
+      <schedule hour="*" mday="*" min="0/3" mon="*" sec="10" wday="?" year="*" />
+      <lastHarvested>2015-01-06T12:37:08.039+00:00</lastHarvested>
+      <lastCompleteHarvest>1900-01-01T00:00:00.000+00:00</lastCompleteHarvest>
+    </synchronization>
+    <subject>CN=urn:node:ESA,DC=dataone,DC=org</subject>
+    <contactSubject>CN=Christopher Jones A2108,O=Google,C=US,DC=cilogon,DC=org</contactSubject>
+    <property key="CN_operational_status">operational</property>
+    <property key="CN_date_operational">2012-07-23T00:00:0.000Z</property>
+    <property key="CN_node_name">ESA Data Registry</property>
+    <property key="CN_logo_url">
+      https://raw.githubusercontent.com/DataONEorg/member-node-info/master/production/graphics/web/ESA.png</property>
+    <property key="CN_info_url">http://www.esa.org</property>
+    <property key="CN_location_lonlat">-77.036133,38.907064</property>
+    <property key="upgrade_status">success</property>
+    <property key="metacat_version">2.18.0</property>
+  </node>
+  <node replicate="false" synchronize="true" type="mn" state="up">
+    <identifier>urn:node:SANPARKS</identifier>
+    <name>SANParks Data Repository</name>
+    <description>The South African National Park Data Repository is the primary source for
+      comprehensive information about scientific and research data sets collected throughout the
+      South African National Park System.</description>
+    <baseURL>https://dataknp.sanparks.org/sanparks/d1/mn</baseURL>
+    <services>
+      <service name="MNRead" version="v1" available="true" />
+      <service name="MNCore" version="v1" available="true" />
+      <service name="MNAuthorization" version="v1" available="true" />
+      <service name="MNStorage" version="v1" available="true" />
+      <service name="MNReplication" version="v1" available="true" />
+    </services>
+    <synchronization>
+      <schedule hour="*" mday="*" min="0/3" mon="*" sec="10" wday="?" year="*" />
+      <lastHarvested>2014-03-24T10:02:35.644+00:00</lastHarvested>
+      <lastCompleteHarvest>1900-01-01T00:00:00.000+00:00</lastCompleteHarvest>
+    </synchronization>
+    <subject>CN=urn:node:SANPARKS,DC=dataone,DC=org</subject>
+    <contactSubject>CN=ben leinfelder A756,O=Google,C=US,DC=cilogon,DC=org</contactSubject>
+    <property key="CN_operational_status">operational</property>
+    <property key="CN_date_operational">2012-07-23T00:00:0.000Z</property>
+    <property key="CN_node_name">SANParks Data Repository</property>
+    <property key="CN_logo_url">
+      https://raw.githubusercontent.com/DataONEorg/member-node-info/master/production/graphics/web/SANPARKS.png</property>
+    <property key="CN_info_url">http://sanparks.org.za/</property>
+    <property key="CN_location_lonlat">28.212891,-25.76032</property>
+  </node>
+</ns3:nodeList>

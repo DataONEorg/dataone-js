@@ -1,4 +1,4 @@
-import parseXML from '@/utils/parseXML';
+import { parseXML } from '@/utils/parseXML';
 
 describe('parseXML function', () => {
   test('should parse valid XML string correctly', () => {

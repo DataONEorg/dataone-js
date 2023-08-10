@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DataONE Nodes</title>
+    <script src="../dist/dataone.min.js"></script>
+    <script>
+      D1.listNodes('PROD').then((nodes) => {
+        const nodesDiv = document.getElementById('nodes');
+        nodesDiv.innerHTML = nodes
+          .map((node) => {
+            return `<div>${node.name}</div>`;
+          })
+          .join('');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>DataONE Nodes</h1>
+    <div id="nodes"></div>
+  </body>
+</html>
